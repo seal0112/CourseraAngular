@@ -7,10 +7,12 @@ import { NgModule } from '@angular/core';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
