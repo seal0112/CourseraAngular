@@ -41,6 +41,7 @@ export class ContactComponent implements OnInit {
   			'email': 'Email not in vaild format',
   		},
   	};
+  	
   	constructor(private fb: FormBuilder) {
   		this.createForm();
   	}
