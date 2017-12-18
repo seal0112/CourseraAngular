@@ -6,12 +6,12 @@
 	fxLayoutGap="10px"
 	fxLayoutGap.xs="10px">
 
-	<div fxFlex="40">
-		<md-card *ngIf="dish">
+	<div fxFlex="40" *ngIf="dish">
+		<md-card>
 			<md-card-header>
 				<md-card-title><h3>{{ dish.name | uppercase }}</h3></md-card-title>
 			</md-card-header>
-			<img md-card-image src="{{dish.image}}" alt="{{dish.name}}">
+			<img md-card-image src="{{BaseURL + dish.image}}" alt="{{dish.name}}">
 			<md-card-content>
 				<p>{{dish.description}}</p>
 			</md-card-content>
@@ -24,25 +24,17 @@
 				<button md-button [routerLink]="['/dishdetail', next]"><span class="fa fa-chevron-right fa-lg"></span></button>
 			</md-card-actions>
 		</md-card>
-		<div [hidden]="dish">
-			<md-spinner></md-spinner>
-			<h4>Loading...Please Wait</h4>
-		</div>
 	</div>
 
-	<div fxFlex="40">
+	<div fxFlex="40" *ngIf="dish">
 		<h1>Comments</h1>
-		<md-list *ngIf="dish">
+		<md-list>
 			<md-list-item *ngFor="let comments of dish.comments">
 				<p md-line>{{comments.comment}}</p>
 				<p md-line>{{comments.rating}} stars</p>
     			<p md-line>-- {{comments.author}} {{comments.date | date}}</p>
 			</md-list-item>
 		</md-list>
-		<div [hidden]="dish">
-			<md-spinner></md-spinner>
-			<h4>Loading...Please Wait</h4>
-		</div>
 		<md-list *ngIf="feedbackForm.valid">
 			<md-list-item>
 				<p md-line>{{feedbackForm.value.comment}}</p>
@@ -72,5 +64,9 @@
           	</p>
           	<button type="submit" md-button class="background-primary text-floral-white" [disabled]="feedbackForm.invalid">Submit</button>
 		</form>
+	</div>
+	<div [hidden]="dish">
+		<md-spinner></md-spinner>
+		<h4>Loading...Please Wait</h4>
 	</div>
 </div>
