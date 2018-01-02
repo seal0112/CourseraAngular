@@ -23,7 +23,7 @@ import { LoginComponent } from './login/login.component';
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
-import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
+import { ProcessHttpmsgService } from './services/process-httpmsg.service';
 
 import { RestangularModule, Restangular } from 'ngx-restangular';
 import { RestangularConfigFactory } from './shared/restConfig';
@@ -58,7 +58,7 @@ import { HighlightDirective } from './directives/highlight.directive';
   entryComponents: [
         LoginComponent
   ],
-  providers: [DishService, PromotionService, LeaderService, ProcessHTTPMsgService,
+  providers: [DishService, PromotionService, LeaderService, ProcessHttpmsgService,
     {provide: 'BaseURL', useValue: baseURL}],
   bootstrap: [AppComponent]
 })

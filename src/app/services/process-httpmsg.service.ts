@@ -5,7 +5,7 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/add/observable/throw';
 
 @Injectable()
-export class ProcessHTTPMsgService {
+export class ProcessHttpmsgService {
 
   constructor() { }
 

@@ -5,7 +5,7 @@ import { DISHES } from '../shared/dishes';
 
 import { Http, Response } from '@angular/http';
 import { baseURL } from '../shared/baseurl';
-import { ProcessHTTPMsgService } from './process-httpmsg.service';
+import { ProcessHttpmsgService } from './process-httpmsg.service';
 import { RestangularModule, Restangular } from 'ngx-restangular';
 
 import 'rxjs/add/operator/toPromise';
@@ -18,7 +18,7 @@ import 'rxjs/add/operator/catch';
 export class DishService {
 
   constructor(private restangular: Restangular,
-              private processHTTPMsgService: ProcessHTTPMsgService) { }
+              private processHTTPMsgService: ProcessHttpmsgService) { }
 
   getDishes(): Observable<Dish[]> {
     return this.restangular.all('dishes').getList();
